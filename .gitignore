@@ -1,0 +1,14 @@
+__pycache__/
+*.py[cod]
+*.egg-info/
+build/
+dist/
+.pytest_cache/
+.venv/
+venv/
+# model weights / checkpoints / outputs
+models/
+*.pt
+*.safetensors
+*.tar.gz
+captionstew_ckpt_*/

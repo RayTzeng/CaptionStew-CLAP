@@ -1,0 +1,19 @@
+CaptionStew-CLAP
+
+This repository includes code adapted from the following projects:
+
+1) Auden (https://github.com/AudenAI/Auden) - Apache License 2.0
+   - captionstew_clap/zipformer/*: Zipformer encoder modules, vendored from
+     auden/models/zipformer (import paths changed; k2 made optional).
+   - The CLAP model structure, caption preprocessing and retrieval metrics follow
+     the Auden CLAP implementation used to train the released checkpoints.
+
+2) k2-fsa/icefall (https://github.com/k2-fsa/icefall) - Apache License 2.0
+   Copyright 2021-2023 Xiaomi Corp.
+   - Zipformer architecture and scaling modules (via Auden).
+   - Checkpoint averaging logic in scripts/convert_checkpoint.py.
+
+3) Lhotse (https://github.com/lhotse-speech/lhotse) - Apache License 2.0
+   - captionstew_clap/features.py re-implements Lhotse's Kaldi-compatible Fbank.
+
+The above projects retain their respective copyrights.

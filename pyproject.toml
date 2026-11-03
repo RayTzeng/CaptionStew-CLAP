@@ -1,0 +1,34 @@
+[build-system]
+requires = ["setuptools>=61"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "captionstew-clap"
+version = "0.1.0"
+description = "Inference code for the CaptionStew CLAP audio-text models (Zipformer + RoBERTa)"
+readme = "README.md"
+requires-python = ">=3.9"
+dependencies = [
+    "torch>=2.1",
+    "transformers>=4.40",
+    "safetensors>=0.4",
+    "huggingface_hub>=0.20",
+    "numpy",
+    "scipy",
+    "soundfile>=0.12",
+    "tqdm",
+]
+
+[project.optional-dependencies]
+# torchaudio: faster resampling and decoding of formats libsndfile cannot read
+# lhotse: evaluation on Lhotse CutSet manifests (e.g. from CaptionStew-data-prep)
+audio = ["torchaudio>=2.1"]
+lhotse = ["lhotse>=1.20"]
+dev = ["pytest", "lhotse>=1.20"]
+
+[project.urls]
+Paper = "https://arxiv.org/abs/2511.16757"
+Data = "https://github.com/RayTzeng/CaptionStew-data-prep"
+
+[tool.setuptools.packages.find]
+include = ["captionstew_clap*"]
